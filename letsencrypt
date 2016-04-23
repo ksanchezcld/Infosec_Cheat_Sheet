@@ -1,0 +1,6 @@
+The objective of Let’s Encrypt and the ACME protocol is to make it possible to set up an HTTPS server and have it automatically obtain a browser-trusted certificate, without any human intervention. This is accomplished by running a certificate management agent on the web server.
+
+Let’s Encrypt is a free, automated, and open certificate authority brought to you by the Internet Security Research Group (ISRG). ISRG is a California public benefit corporation, and is recognized by the IRS as a tax-exempt organization under Section 501(c)(3) of the Internal Revenue Code. ISRG’s mission is to reduce financial, technological, and education barriers to secure communication over the Internet.
+
+- https://letsencrypt.org/
+- https://letsencrypt.org/documents/ISRG-Legal-Transparency-Report-April-1-2016.pdf
