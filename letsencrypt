@@ -12,7 +12,11 @@ Let’s Encrypt will issue a limited number of certificates each week. See this 
 
 - ./letsncrypt-auto certonly --test-cert --manual 
 
+--------------
+ Manual Mode
+--------------
 
+http://manurevah.com/blah/en/p/Letsencrypt-Manual-mode
 
 
 

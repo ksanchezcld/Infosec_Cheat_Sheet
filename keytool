@@ -1,0 +1,20 @@
+- keytool -list -keystore cacerts
+
+Keystore only has one password. You can change it using keytool:
+
+- keytool -storepasswd -keystore my.keystore
+
+To change the key's password:
+
+- keytool -keypasswd  -alias <key_name> -keystore my.keystore
+
+[Sample]
+
+keytool -storepasswd -keystore /path/to/keystore
+Enter keystore password:  changeit
+New keystore password:  new-password
+Re-enter new keystore password:  new-password
+
+
+
+http://stackoverflow.com/questions/2889238/keystore-change-passwords
