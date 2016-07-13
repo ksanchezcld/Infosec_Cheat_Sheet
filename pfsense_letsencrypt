@@ -1,0 +1,18 @@
+It's a manual process today, but here's what I did to get it working.  You'd need to repeat steps 13+ here every 3 months as the certificates are meant to be automatically renewed.  Hopefully someone can turn this into a package that automatically creates and updates the config.
+
+    enable ssh, ssh to fw
+    mkdir -p /usr/local/www/.well-known/acme-challenge
+    pkg install git bash
+    rehash
+    mkdir /usr/local/src
+    cd /usr/local/src
+    git clone https://github.com/lukas2511/letsencrypt.sh.git
+    cd letsencrypt.sh/
+    edit letsencrypt.sh, change WELLKNOWN=/usr/local/www/.well-known/acme-challenge
+    edit /etc/ssl/openssl.cnf, modify appropriate fields in req_distinguished_name section, set commonName to the external DNS FQDN of the firewall
+    make sure the firewall has a valid DNS A record in the public internet and that it's currently pointing to the firewall's external IP
+    make sure a firewall rule allows access via HTTP(s) from the outside world to permit the challenge rule to go through (you can close this back up once complete)
+    /letsencrypt.sh -c -d your.fw.domain.com
+    take the output from certs/your.fw.domain.com/privkey.pem and fullchain.pem, import their contents into a new cert in the web UI -> System -> Cert Manager -> Certificates
+    set the web UI to use that cert in system -> advanced -> admin access
+    profit
